@@ -52,4 +52,8 @@
         galleryItems.forEach(item => (item.addEventListener('transitionend', showText)));
     }
 
+    //search
+
+    urlSearch = 'http://data.okfn.org/data/core/world-cities/r/world-cities.json';
+
 })();
