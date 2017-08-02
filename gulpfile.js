@@ -102,4 +102,4 @@ gulp.task('watch', function () {
 });
 
 //default
-gulp.task('default', [ 'browser-sync', 'pug', 'css', 'img', 'js', 'scripts', 'fonts', 'watch', 'bower']);
+gulp.task('default', ['browser-sync', 'pug', 'css', 'img', 'js', 'scripts', 'fonts', 'watch', 'bower']);

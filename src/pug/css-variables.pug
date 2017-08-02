@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+
+    include components/head
+    head
+        +head
+    body.body
+        h2.variables__title Try css variables
+        form.variables-form
+            .variables-form__box
+                label.variables-form__name(name='spacing' value="10") Spacing
+                input.variables-form__input(type="range" id="spacing" min="0" max="30")
+            .variables-form__box
+                label.variables-form__name(name='blur' value="2") Blur
+                input.variables-form__input(type="range" id="blur" min="0" max="20")
+            .variables-form__box
+                label.variables-form__name(name='color') Color
+                input.variables-form__input(type="color" id="main-color")
+        img.variables-img(src='//lorempixel.com/1200/768/city/')
+        script(src='js/main.js')

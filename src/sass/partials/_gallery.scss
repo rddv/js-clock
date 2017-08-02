@@ -1,0 +1,79 @@
+.gallery{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: purple;
+    font-family: 'Amatic SC', cursive;
+    font-size: 40px;
+    color: #fff;
+    &__item{
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        justify-content: center;
+        background-image: url(//lorempixel.com/400/200/food/);
+        background-position: 50% 50%;
+        background-size: cover;
+        font-size: 40px;
+        transition: font-size .7s cubic-bezier(0.61, -0.19, 0.7, 0.11),
+                    flex .7s cubic-bezier(0.61, -0.19, 0.7, 0.11);
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+        }
+        &.show{
+            .gallery__text{
+                &:first-of-type{
+                    transform: translateY(0);
+                }
+                &:last-of-type{
+                    transform: translateY(0);
+                }
+            }
+        }
+        &.active{
+            flex: 5;
+            font-size: 50px;
+        }
+        &:nth-of-type(2){
+            background-image: url(//lorempixel.com/400/200/sports/);
+
+        }
+        &:nth-of-type(3){
+            background-image: url(//lorempixel.com/400/200/city/);
+        }
+        &:nth-of-type(4){
+            background-image: url(//pipsum.com/1024x768.jpg);
+        }
+        &:nth-of-type(4){
+            background-image: url(//pipsum.com/300x600.jpg);
+        }
+    }
+    &__text{
+        display: flex;
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        text-shadow: 5px 5px 9px #000;
+        transition: transform .5s cubic-bezier(0.61, -0.19, 0.7, 0.11);
+        &:first-of-type{
+            transform: translateY(-100%);
+        }
+        &:last-of-type{
+            transform: translateY(100%);
+        }
+    }
+}
