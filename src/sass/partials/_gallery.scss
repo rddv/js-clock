@@ -15,7 +15,7 @@
         flex-grow: 1;
         align-items: center;
         justify-content: center;
-        background-image: url(//lorempixel.com/400/200/food/);
+        background-image: url(//unsplash.it/200/300/?random);
         background-position: 50% 50%;
         background-size: cover;
         font-size: 40px;
@@ -55,7 +55,7 @@
         &:nth-of-type(4){
             background-image: url(//pipsum.com/1024x768.jpg);
         }
-        &:nth-of-type(4){
+        &:nth-of-type(5){
             background-image: url(//pipsum.com/300x600.jpg);
         }
     }

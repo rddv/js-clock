@@ -31,6 +31,7 @@
         margin-top: 20px;
         background-color: #fff;
         border-bottom: none;
+        text-align: left;
         &:nth-of-type(2n - 1){
             &:before{
                 content: '';
@@ -98,9 +99,13 @@
     }
     &__city{
         text-transform: capitalize;
+        &-bg{
+            background-color: #F9C60E;
+        }
     }
     &__country{
         font-size: 11px;
         text-transform: uppercase;
+        text-align: right;
     }
 }

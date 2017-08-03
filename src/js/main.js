@@ -1,4 +1,4 @@
-(function () {
+//(function () {
     // clock
     const secArrow = document.querySelector('.clock__arrow--second');
     const minArrow = document.querySelector('.clock__arrow--min');
@@ -37,7 +37,6 @@
     //gallery
 
     const galleryItems = document.querySelectorAll('.gallery__item');
-    console.log(galleryItems);
     function showGallery() {
         this.classList.toggle('active');
     }
@@ -54,6 +53,35 @@
 
     //search
 
-    urlSearch = 'http://data.okfn.org/data/core/world-cities/r/world-cities.json';
+    //const endPoint = 'http://data.okfn.org/data/core/world-cities/r/world-cities.json';
+    const endPoint = 'https://restcountries.eu/rest/v2/all';
+    const cities = [];
+    const searchInput = document.querySelector('.search__input');
+    const searchList = document.querySelector('.search__list');
+    fetch(endPoint).then(blob => blob.json()).then(data => {
+        return cities.push(...data);
+    });
 
-})();
+    console.log(cities);
+    function findMatches(textToMathes, cities){
+        const regexp = new RegExp(textToMathes, 'gi');
+        return cities.filter(item => {
+            return item.name.match(regexp);
+        });
+    }
+    function makeItems(e){
+        const matches = findMatches(this.value, cities);
+        const makeList = matches.map(item => {
+            const regexp = new RegExp(this.value, 'gi');
+            const countryName = item.name.replace(regexp, `<span class="search__city-bg">${this.value}</span>`)
+            return `<li class="search__item">
+                <span class="search__city">${countryName}</span>
+                <span class="search__country">${item.capital}</span>
+            </li>`;
+        });
+        searchList.innerHTML = makeList.join('');
+    }
+
+    searchInput.addEventListener('keyup', makeItems);
+
+//})();
